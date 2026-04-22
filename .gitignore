@@ -1,0 +1,32 @@
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+### Build Tools (Ant/Maven/Gradle) ###
+# SimpleDB 默认使用 Ant，会产生 bin 和 dist 文件夹 [cite: 34, 67]
+bin/
+dist/
+build/
+lib/ant/
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+### macOS ###
+.DS_Store
+
+### SimpleDB Data Files ###
+# 避免上传生成的测试数据文件
+*.dat
+*.txt
+# 但保留 src 和 test 目录下的原始文件
+!src/**/*.txt
+!test/**/*.txt
