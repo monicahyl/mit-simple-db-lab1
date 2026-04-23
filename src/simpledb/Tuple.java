@@ -1,11 +1,19 @@
 package simpledb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Tuple maintains information about the contents of a tuple.
  * Tuples have a specified schema specified by a TupleDesc object and contain
  * Field objects with the data for each field.
  */
 public class Tuple {
+
+
+    private List<Field> fields = new ArrayList<>(16);
+
+    private TupleDesc tupleDesc;
 
     /**
      * Create a new tuple with the specified schema (type).
@@ -15,6 +23,7 @@ public class Tuple {
      */
     public Tuple(TupleDesc td) {
         // some code goes here
+        tupleDesc = td;
     }
 
     /**
@@ -22,7 +31,7 @@ public class Tuple {
      */
     public TupleDesc getTupleDesc() {
         // some code goes here
-        return null;
+        return tupleDesc;
     }
 
     /**
@@ -50,6 +59,7 @@ public class Tuple {
      */
     public void setField(int i, Field f) {
         // some code goes here
+        fields.add(i, f);
     }
 
     /**
@@ -59,7 +69,7 @@ public class Tuple {
      */
     public Field getField(int i) {
         // some code goes here
-        return null;
+        return fields.get(i);
     }
 
     /**

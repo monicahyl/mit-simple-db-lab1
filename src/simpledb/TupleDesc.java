@@ -6,6 +6,9 @@ import java.util.*;
  */
 public class TupleDesc {
 
+
+    private HashMap<Type, String> tupleDesc = new HashMap<>();
+
     /**
      * Merge two TupleDescs into one, with td1.numFields + td2.numFields
      * fields, with the first td1.numFields coming from td1 and the remaining
@@ -29,6 +32,9 @@ public class TupleDesc {
      */
     public TupleDesc(Type[] typeAr, String[] fieldAr) {
         // some code goes here
+        for (int i = 0; i < typeAr.length; i++) {
+            tupleDesc.put(typeAr[i], fieldAr[i]);
+        }
     }
 
     /**
@@ -41,6 +47,9 @@ public class TupleDesc {
      */
     public TupleDesc(Type[] typeAr) {
         // some code goes here
+        for (int i = 0; i < typeAr.length; i++) {
+            tupleDesc.put(typeAr[i], "");
+        }
     }
 
     /**
@@ -48,7 +57,7 @@ public class TupleDesc {
      */
     public int numFields() {
         // some code goes here
-        return 0;
+        return tupleDesc.size();
     }
 
     /**
